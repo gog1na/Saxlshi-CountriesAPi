@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CountriesViewController.swift
 //  Saxlshi CountriesAPi
 //
 //  Created by Giorgi Goginashvili on 1/20/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CountriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

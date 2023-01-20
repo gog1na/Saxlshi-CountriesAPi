@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		257F6381297AAD7E00B8EEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */; };
 		257F6383297AAD7E00B8EEF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */; };
-		257F6385297AAD7E00B8EEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6384297AAD7E00B8EEF6 /* ViewController.swift */; };
-		257F6388297AAD7E00B8EEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257F6386297AAD7E00B8EEF6 /* Main.storyboard */; };
+		257F6385297AAD7E00B8EEF6 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6384297AAD7E00B8EEF6 /* CountriesViewController.swift */; };
+		257F6388297AAD7E00B8EEF6 /* Countries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257F6386297AAD7E00B8EEF6 /* Countries.storyboard */; };
 		257F638A297AAD8300B8EEF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257F6389297AAD8300B8EEF6 /* Assets.xcassets */; };
 		257F638D297AAD8300B8EEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257F638B297AAD8300B8EEF6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +19,8 @@
 		257F637D297AAD7E00B8EEF6 /* Saxlshi CountriesAPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxlshi CountriesAPi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		257F6384297AAD7E00B8EEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		257F6387297AAD7E00B8EEF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		257F6384297AAD7E00B8EEF6 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
+		257F6387297AAD7E00B8EEF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Countries.storyboard; sourceTree = "<group>"; };
 		257F6389297AAD8300B8EEF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		257F638C297AAD8300B8EEF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		257F638E297AAD8300B8EEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +56,63 @@
 		257F637F297AAD7E00B8EEF6 /* Saxlshi CountriesAPi */ = {
 			isa = PBXGroup;
 			children = (
-				257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */,
-				257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */,
-				257F6384297AAD7E00B8EEF6 /* ViewController.swift */,
-				257F6386297AAD7E00B8EEF6 /* Main.storyboard */,
-				257F6389297AAD8300B8EEF6 /* Assets.xcassets */,
-				257F638B297AAD8300B8EEF6 /* LaunchScreen.storyboard */,
-				257F638E297AAD8300B8EEF6 /* Info.plist */,
+				257F6394297AAE1D00B8EEF6 /* App */,
+				257F6397297AAE4800B8EEF6 /* Scenes */,
+				257F6395297AAE2400B8EEF6 /* Resources */,
+				257F6396297AAE2C00B8EEF6 /* SupportingFiles */,
 			);
 			path = "Saxlshi CountriesAPi";
+			sourceTree = "<group>";
+		};
+		257F6394297AAE1D00B8EEF6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */,
+				257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		257F6395297AAE2400B8EEF6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				257F6389297AAD8300B8EEF6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		257F6396297AAE2C00B8EEF6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				257F638E297AAD8300B8EEF6 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		257F6397297AAE4800B8EEF6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				257F6398297AAE5600B8EEF6 /* Launch */,
+				257F6399297AAEA700B8EEF6 /* Countries */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		257F6398297AAE5600B8EEF6 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				257F638B297AAD8300B8EEF6 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		257F6399297AAEA700B8EEF6 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				257F6384297AAD7E00B8EEF6 /* CountriesViewController.swift */,
+				257F6386297AAD7E00B8EEF6 /* Countries.storyboard */,
+			);
+			path = Countries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +175,7 @@
 			files = (
 				257F638D297AAD8300B8EEF6 /* LaunchScreen.storyboard in Resources */,
 				257F638A297AAD8300B8EEF6 /* Assets.xcassets in Resources */,
-				257F6388297AAD7E00B8EEF6 /* Main.storyboard in Resources */,
+				257F6388297AAD7E00B8EEF6 /* Countries.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				257F6385297AAD7E00B8EEF6 /* ViewController.swift in Sources */,
+				257F6385297AAD7E00B8EEF6 /* CountriesViewController.swift in Sources */,
 				257F6381297AAD7E00B8EEF6 /* AppDelegate.swift in Sources */,
 				257F6383297AAD7E00B8EEF6 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,12 +195,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		257F6386297AAD7E00B8EEF6 /* Main.storyboard */ = {
+		257F6386297AAD7E00B8EEF6 /* Countries.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				257F6387297AAD7E00B8EEF6 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Countries.storyboard;
 			sourceTree = "<group>";
 		};
 		257F638B297AAD8300B8EEF6 /* LaunchScreen.storyboard */ = {
@@ -288,10 +336,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Saxlshi CountriesAPi/Info.plist";
+				INFOPLIST_FILE = "Saxlshi CountriesAPi/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Countries;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,10 +363,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Saxlshi CountriesAPi/Info.plist";
+				INFOPLIST_FILE = "Saxlshi CountriesAPi/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Countries;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
