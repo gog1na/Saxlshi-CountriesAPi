@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25468EF329827D3100E9EEF9 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25468EF229827D3100E9EEF9 /* CountriesViewModel.swift */; };
 		2570F97E297ACBD100119DD3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2570F97D297ACBD100119DD3 /* Kingfisher */; };
 		257F6381297AAD7E00B8EEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */; };
 		257F6383297AAD7E00B8EEF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25468EF229827D3100E9EEF9 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		257F637D297AAD7E00B8EEF6 /* Saxlshi CountriesAPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saxlshi CountriesAPi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		257F6380297AAD7E00B8EEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		257F6382297AAD7E00B8EEF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25468EF129827D0500E9EEF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				25468EF229827D3100E9EEF9 /* CountriesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		257F6374297AAD7E00B8EEF6 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				257F639B297AB21E00B8EEF6 /* CountryTableViewCell */,
+				25468EF129827D0500E9EEF9 /* ViewModel */,
 				257F6384297AAD7E00B8EEF6 /* CountriesViewController.swift */,
 				257F6386297AAD7E00B8EEF6 /* Countries.storyboard */,
 			);
@@ -268,6 +279,7 @@
 				257F63A8297AB48600B8EEF6 /* NetworkManager.swift in Sources */,
 				257F639E297AB24A00B8EEF6 /* CountryTableViewCell.swift in Sources */,
 				257F6385297AAD7E00B8EEF6 /* CountriesViewController.swift in Sources */,
+				25468EF329827D3100E9EEF9 /* CountriesViewModel.swift in Sources */,
 				257F63AA297AB49F00B8EEF6 /* CountriesManager.swift in Sources */,
 				257F63AD297AB4D700B8EEF6 /* Country.swift in Sources */,
 				257F63A1297AB28400B8EEF6 /* CountryDetailsViewController.swift in Sources */,

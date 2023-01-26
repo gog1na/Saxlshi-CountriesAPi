@@ -7,26 +7,38 @@
 
 import UIKit
 
+/*
+ MVC - Model View Controller (Massive View Controller)
+ 
+ Model - Country
+ View - Scene
+ Controller - CountriesViewController
+ 
+ ---------------------------------------
+ 
+ MVVM - Mode View ViewModel
+ 
+ Model - Country
+ View - Scene
+ ViewModel - CountriesViewController Logics
+ */
+
 class CountriesViewController: UIViewController, UISearchControllerDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
-    var apiManager: CountriesManagerProtocol = CountriesManager()
+    private var viewModel: CountriesViewModelProtocol = CountriesViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     
-    var countries: [Country] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
-    
+        
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchCountries()
+        //fetchCountries()
+        setupViewModel()
         setupNavBar()
     }
 
@@ -46,14 +58,10 @@ class CountriesViewController: UIViewController, UISearchControllerDelegate {
         searchController.delegate = self
     }
     
-    func fetchCountries() {
-        apiManager.fetchCountries { result in
-            switch result {
-            case .success(let country):
-                self.countries =  country
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+    private func setupViewModel() {
+        viewModel.fetchCountries()
+        viewModel.onCountriesReceived = {
+            self.tableView.reloadData()
         }
     }
 
@@ -63,7 +71,7 @@ class CountriesViewController: UIViewController, UISearchControllerDelegate {
 extension CountriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondVC = UIStoryboard(name: "CountryDetails", bundle: nil).instantiateViewController(withIdentifier: "CountryDetails") as! CountryDetailsViewController
-        secondVC.countries = countries[indexPath.row]
+        secondVC.countries = viewModel.countries[indexPath.row]
         //secondVC.indexItem = indexPath.row BUG
         
         navigationController?.pushViewController(secondVC, animated: true)
@@ -73,11 +81,11 @@ extension CountriesViewController: UITableViewDelegate {
 //MARK: - UITableViewDataSource
 extension CountriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        countries.count
+        viewModel.countries.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as! CountryTableViewCell
-        cell.configure(with: countries[indexPath.row])
+        cell.configure(with: viewModel.countries[indexPath.row])
         return cell
     }
 }
@@ -86,14 +94,9 @@ extension CountriesViewController: UITableViewDataSource {
 extension CountriesViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return}
-        print(text)
         
-        if text.isEmpty {
-            fetchCountries()
-        } else {
-            // filter = HOF -> Higher Order Function
-            self.countries = self.countries.filter{$0.name.official!.lowercased().contains(text.lowercased())}
-        }
+        viewModel.filterCountries(with: text)
+        
         
         /* filter = HOF -> Higher Order Function
         self.countries = self.countries.filter{$0.name.official?.lowercased().contains(text.lowercased())}
