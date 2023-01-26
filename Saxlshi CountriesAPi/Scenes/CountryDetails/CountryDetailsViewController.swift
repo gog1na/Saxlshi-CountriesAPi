@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CountryDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
+    
+    var countries: Country?
+    //var indexItem: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI() {
+        flagImage.kf.indicatorType = .activity
+        flagImage.kf.setImage(with: URL(string: countries?.flags.png ?? ""))
+        textLabel.text = countries?.name.official
+        //capitalLabel.text = countries?.capital![0]
     }
-    */
 
 }

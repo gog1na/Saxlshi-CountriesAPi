@@ -10,6 +10,7 @@ import Foundation
 struct Country: Codable {
     let name: Name
     let flags: Flags
+    let capital: [String]?
 }
 
 struct Name: Codable {
@@ -21,3 +22,5 @@ struct Flags: Codable {
     let png: String?
     let svg: String?
 }
+
+

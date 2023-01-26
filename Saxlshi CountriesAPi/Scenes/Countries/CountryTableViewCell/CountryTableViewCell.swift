@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CountryTableViewCell: UITableViewCell {
     
@@ -18,10 +19,10 @@ class CountryTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with country: Country) {
+        countryName.text = country.name.official
+        flagImage.kf.indicatorType = .activity
+        flagImage.kf.setImage(with: URL(string: country.flags.png ?? ""))
     }
     
 }

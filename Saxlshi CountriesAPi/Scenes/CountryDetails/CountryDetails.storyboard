@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Country Details View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountryDetails" id="Y6W-OH-hqX" customClass="CountryDetailsViewController" customModule="Saxlshi_CountriesAPi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,21 +29,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th6-5H-wY6">
+                                <rect key="frame" x="15" y="439" width="368" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jwr-uo-qqk" firstAttribute="top" secondItem="SoK-dk-8Du" secondAttribute="bottom" constant="50" id="K3C-18-jMw"/>
+                            <constraint firstItem="Th6-5H-wY6" firstAttribute="top" secondItem="Jwr-uo-qqk" secondAttribute="bottom" constant="78.666666666666686" id="OLU-3p-Nfp"/>
                             <constraint firstItem="SoK-dk-8Du" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="75" id="P9z-0a-lig"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Jwr-uo-qqk" secondAttribute="trailing" constant="10" id="f3z-aY-f4r"/>
+                            <constraint firstItem="Th6-5H-wY6" firstAttribute="leading" secondItem="Jwr-uo-qqk" secondAttribute="leading" id="jFJ-DV-URP"/>
+                            <constraint firstItem="Th6-5H-wY6" firstAttribute="trailing" secondItem="Jwr-uo-qqk" secondAttribute="trailing" id="pWS-8D-3xp"/>
                             <constraint firstItem="SoK-dk-8Du" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="tAI-vp-tNI"/>
                             <constraint firstItem="Jwr-uo-qqk" firstAttribute="leading" secondItem="SoK-dk-8Du" secondAttribute="leading" id="yIF-Ky-iC9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="capitalLabel" destination="Th6-5H-wY6" id="GIm-Le-YLj"/>
+                        <outlet property="flagImage" destination="SoK-dk-8Du" id="FD0-Ra-TTn"/>
+                        <outlet property="textLabel" destination="Jwr-uo-qqk" id="hyL-Y1-Uoa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="-2"/>
+            <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
